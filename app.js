@@ -6,11 +6,13 @@ const app = express();
 const connectDB = require('./db/connect');
 const userRouter = require('./routes/api/users');
 const authRouter = require('./routes/api/auth');
+const profileRouter = require('./routes/api/profile');
 // Iit middleware
 app.use(express.json());
 // Routes
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/profile', profileRouter);
 
 const start = async () => {
   try {
