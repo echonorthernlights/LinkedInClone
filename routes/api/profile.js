@@ -41,6 +41,29 @@ router.route('/').get(async (req, res) => {
   }
 });
 
+// @route  DELETE api/profile/user/:userID
+// @desc   Delete user + profile + posts
+// @access Private
+
+router.route('/').delete(authMiddleware, async (req, res) => {
+  try {
+    console.log(req);
+    const userID = req.user.id;
+    // @todo delete posts
+
+    // delete user
+    await Profile.findOneAndRemove({ user: userID });
+
+    //delete profile
+    await User.findOneAndRemove({ _id: userID });
+
+    res.json({ msg: 'User deleted successfully !!' });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send('Server error ...');
+  }
+});
+
 // @route  GET api/profile/user/:userID
 // @desc   Get profile by user ID
 // @access Public
