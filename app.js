@@ -7,7 +7,7 @@ const connectDB = require('./db/connect');
 const userRouter = require('./routes/api/users');
 const authRouter = require('./routes/api/auth');
 const profileRouter = require('./routes/api/profile');
-// Iit middleware
+// Init middleware
 app.use(express.json());
 // Routes
 app.use('/api/users', userRouter);

@@ -6,6 +6,7 @@ const authMiddleware = require('../../middleware/auth');
 const { validationResult } = require('express-validator');
 const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
+
 // @route  api/auth
 // @desc   Test route for auth
 // @access Public
@@ -20,7 +21,6 @@ router.route('/').get(authMiddleware, async (req, res) => {
     res.status(500).send('Server error....');
   }
 });
-router.route('/').post();
 
 // @route  api/auth
 // @desc   Authenticate user and get Token
