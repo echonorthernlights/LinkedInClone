@@ -7,12 +7,14 @@ const connectDB = require('./db/connect');
 const userRouter = require('./routes/api/users');
 const authRouter = require('./routes/api/auth');
 const profileRouter = require('./routes/api/profile');
+const postRouter = require('./routes/api/post');
 // Init middleware
 app.use(express.json());
 // Routes
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/profile', profileRouter);
+app.use('/api/post', postRouter);
 
 const start = async () => {
   try {
