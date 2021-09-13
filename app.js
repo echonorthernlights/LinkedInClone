@@ -18,7 +18,7 @@ app.use('/api/post', postRouter);
 
 const start = async () => {
   try {
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 5000;
     await connectDB(process.env.MONGO_URI);
     app.listen(PORT, (req, res) => {
       console.log('Server running on PORT ', PORT);
