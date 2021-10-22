@@ -1,12 +1,19 @@
 const express = require('express');
 require('dotenv').config();
+const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
-const jwt = require('jsonwebtoken');
+
+
+//testing
+// router.route('/').get((req, res)=>{
+//   res.send('hello....')
+// })
+
 // @route  api/users
 // @desc   Test route for users
 // @access Public

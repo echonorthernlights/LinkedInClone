@@ -30,8 +30,8 @@ router.route('/me').get(authMiddleware, async (req, res) => {
 });
 
 // @route  GET api/profile/me
-// @desc   Get current users profile
-// @access Private
+// @desc   Get current users profiles
+// @access Public
 
 router.route('/').get(async (req, res) => {
   try {
